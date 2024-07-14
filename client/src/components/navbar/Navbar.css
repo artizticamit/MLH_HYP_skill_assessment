@@ -4,7 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #007bff;
+    background-color: #000000;
     padding: 10px 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     font-family: Arial, sans-serif;
@@ -21,7 +21,7 @@
 }
 
 .navbar-container a:hover {
-    background-color: #0056b3;
+    background-color: #292424;
     transform: scale(1.05);
 }
 
