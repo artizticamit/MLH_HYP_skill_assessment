@@ -28,16 +28,49 @@ function Home() {
         </h1> <br />
         <div className='home-text-msg'>
             Welcome to Assess your skills and get Recommendation accordingly.
-        </div>
-        <div className='box'>
+        </div><br />
 
-        <input className='home-input' type='text' placeholder='Enter username' onChange={(e)=>{handleChange(e)}}></input><br /><br />
-        <button className='home-input-btn' onClick={handleSubmit}>Submit</button>
-        {
-            click && (
-                <Codeforces username={username}/>
-            )
-        }</div>
+        <div className="strip">
+
+            <div className='box1'>
+              <div className='lable'>Enter your Codeforce's User name</div>
+
+                <div><input className='home-input' type='text' placeholder='Enter username' onChange={(e)=>{handleChange(e)}}></input><br/><br/ ></div>
+                <div><button className='home-input-btn' onClick={handleSubmit}>Submit</button>
+                     {
+                      click && (
+                     <Codeforces username={username}/>
+                           )
+                       }
+                </div>
+            </div>
+
+            <div className='box2'>
+              <div className='lable'>Enter your Codechef's User name</div>
+
+                <div><input className='home-input' type='text' placeholder='Enter username' onChange={(e)=>{handleChange(e)}}></input><br/><br/ ></div>
+                <div><button className='home-input-btn' onClick={handleSubmit}>Submit</button>
+                     {
+                      click && (
+                     <Codeforces username={username}/>
+                           )
+                       }
+                </div>
+            </div>
+
+            <div className='box3'>
+              <div className='lable'>Enter your Leetcode's User name</div>
+
+                <div><input className='home-input' type='text' placeholder='Enter username' onChange={(e)=>{handleChange(e)}}></input><br/><br/ ></div>
+                <div><button className='home-input-btn' onClick={handleSubmit}>Submit</button>
+                     {
+                      click && (
+                     <Codeforces username={username}/>
+                           )
+                       }
+                </div>
+            </div>
+        </div>
     </div>
   )
 }

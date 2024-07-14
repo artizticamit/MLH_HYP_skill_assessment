@@ -2,6 +2,9 @@ body {
     background-color: antiquewhite;
     font-family: Arial, Helvetica, sans-serif;
 }
+/* .home-container{
+    
+} */
 
 .home-heading {
     text-align: center;
@@ -14,18 +17,48 @@ body {
     font-weight: 500;
     font-weight: bolder;
 }
-
-.box {
-    margin-left: 650px;
-    margin-top: 100px;
+.lable{
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bolder;
+}
+.strip{
+    display: flex;
+    margin-left: 80px;
 }
 
+.box1 {
+    margin: 80px;
+    height: 220px;
+    width: 280px;
+    text-align: center;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+.box2 {
+    margin: 80px;
+    height: 220px;
+    width: 280px;
+    text-align: center;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+
+.box3 {
+    margin: 80px;
+    height: 220px;
+    width: 280px;
+    text-align: center;
+    border: 3px solid black;
+    border-radius: 10px;
+}
 .home-input {
     flex: 1;
     padding: 15px ;
     height: 20px;
     border: 3px solid black;
     border-radius: 10px;
+    margin-top: 50px;
 }
 
 ::placeholder{
