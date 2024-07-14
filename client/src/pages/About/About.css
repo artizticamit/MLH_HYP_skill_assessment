@@ -1,5 +1,6 @@
 body{
     font-family:Arial, Helvetica, sans-serif ;
+    background-color: antiquewhite;
 }
 .about-heading{
     text-align: center;
@@ -10,4 +11,47 @@ body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: medium;
     text-align: center;
+}
+.owners{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+.amit{
+    
+    font-weight: bold;
+    border: 2px solid black;
+    margin: 12px;
+    width: 250px;
+    height: 90px;
+    border-radius: 10px;
+    margin-right: 50px;
+}
+.links{
+    display: flex;
+    text-align: end;
+}
+.linkedin{
+    border-radius: 3px;
+    margin-top: 20px;
+    background-color: black;
+}
+.git{
+    border-radius: 3px;
+    margin-top: 5px;
+    background-color: black;
+    
+}
+.poorvi{
+    font-weight: bold;
+    border-radius: 10px;
+    border: 2px solid black;
+    margin: 12px;
+    width: 250px;
+    height: 90px;
+}
+a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
 }
