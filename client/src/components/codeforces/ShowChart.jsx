@@ -32,7 +32,10 @@ function ShowChart({ tagCounts }) {
     };
 
     return (
-        <div>
+        <div style={{
+            height:'500px',
+            width:'800px'
+        }}>
             <Bar data={data} options={options} />
         </div>
     );

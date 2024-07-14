@@ -1,79 +1,86 @@
-body {
+/* Home.css */
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
     background-color: antiquewhite;
-    font-family: Arial, Helvetica, sans-serif;
 }
-/* .home-container{
-    
-} */
 
 .home-heading {
-    text-align: center;
-    font-weight: 1000;
-
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #333;
+    margin: 20px 0;
 }
 
 .home-text-msg {
+    font-size: 1.2em;
+    color: #555;
     text-align: center;
-    font-weight: 500;
-    font-weight: bolder;
+    margin-bottom: 20px;
+    max-width: 600px;
 }
-.lable{
-    text-align: center;
-    margin-top: 20px;
-    font-weight: bolder;
-}
-.strip{
-    display: flex;
-    margin-left: 80px;
+
+.strip {
+    width: 100%;
+    max-width: 800px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px 0;
 }
 
 .box1 {
-    margin: 80px;
-    height: 220px;
-    width: 280px;
-    text-align: center;
-    border: 3px solid black;
-    border-radius: 10px;
-}
-.box2 {
-    margin: 80px;
-    height: 220px;
-    width: 280px;
-    text-align: center;
-    border: 3px solid black;
-    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.box3 {
-    margin: 80px;
-    height: 220px;
-    width: 280px;
-    text-align: center;
-    border: 3px solid black;
-    border-radius: 10px;
+.label {
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 10px;
 }
+
 .home-input {
-    flex: 1;
-    padding: 15px ;
-    height: 20px;
-    border: 3px solid black;
-    border-radius: 10px;
-    margin-top: 50px;
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+    margin-bottom: 20px;
 }
 
-::placeholder{
-    color: rgb(0, 0, 0);
-    font-weight: bolder;
-}
 .home-input-btn {
-
+    padding: 10px 20px;
+    font-size: 1em;
     color: #fff;
-    background-color: black;
-    border: 1px solid transparent;
-    border-radius: 10px;
-    padding: 15px;
-    height: 45px;
-    width: 190px;
-    text-align: center;
-    font-weight: bold;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.home-input-btn:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 600px) {
+    .home-heading {
+        font-size: 2em;
+    }
+
+    .home-text-msg {
+        font-size: 1em;
+    }
+
+    .home-input {
+        width: 90%;
+    }
 }
