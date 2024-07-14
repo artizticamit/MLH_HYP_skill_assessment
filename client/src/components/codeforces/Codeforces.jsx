@@ -8,6 +8,8 @@ function Codeforces({username}) {
     const [userData, setUserData] = useState({});
     const [userStatus, setUserStatus] = useState([]);
 
+    const [error, setError] = useState(null);
+
    
     useEffect(()=>{
         const fetchUserInfo = async()=>{
@@ -15,9 +17,11 @@ function Codeforces({username}) {
                 if(username){
                     const result = await axios.get('https://codeforces.com/api/user.info?handles='+username);
                     setUserData(result.data); 
+                    // setFound(true);
                 }
             }catch(err){
                 console.log(err);
+                setError(err);
             }
         }
         fetchUserInfo();
@@ -29,7 +33,7 @@ function Codeforces({username}) {
                 if(username){
 
                     const result = await axios.get('https://codeforces.com/api/user.status?handle='+username);
-                    if(result.status===200) result.data.status==='OK' ? setUserStatus(result.data.result) : setUserStatus([]); 
+                    if(result.status===200 && result.data && result.data.result && result.data.result.length!==0) result.data.status==='OK' ? setUserStatus(result.data.result) : setUserStatus([]); 
                 }
             }catch(err){
                 console.log(err);
@@ -37,12 +41,10 @@ function Codeforces({username}) {
         }
         fetchUserStatus();
     },[username])
-    // console.log(userStatus);
 
     const updatedUserStatus = useMemo(()=>{
         return userStatus.filter(it => it.verdict==='OK');
     }, [userStatus])
-    console.log(updatedUserStatus[0]);
 
     const tagCounts = useMemo(()=>{
         const tagCounts = {};
@@ -60,15 +62,15 @@ function Codeforces({username}) {
         })
         return tagCounts;
     }, [updatedUserStatus])
+    console.log(updatedUserStatus)
 
-    console.log(tagCounts)
 
 
   return (
     <div className='codeforces-container'>
         <h2 className='codeforces-header'>CodeForces</h2>
         {
-            userData.status === 'OK' && (
+            (userData.status === 'OK' && updatedUserStatus.length!==0) && (
                 <div className='codeforces-body'>
                 
                     <div>Name = {(userData.result[0].firstName?userData.result[0].firstName:'' )+ " "+ (userData.result[0].lastName ? userData.result[0].lastName : '')}</div>
@@ -78,10 +80,30 @@ function Codeforces({username}) {
                 </div>
             )
         }
-        <div className='codeforces-tags'>
-                <h3>Tag Counts:</h3>
-                <ShowChart tagCounts={tagCounts} />
-            </div>
+        {
+            (userData.status === 'OK' && updatedUserStatus.length!==0) ? (
+                <div className='codeforces-tags'>
+                        <h3>Tag Counts:</h3>
+                        <ShowChart tagCounts={tagCounts} />
+                </div>
+            ):(
+                <div>
+                    {
+                        error!==null ? (
+                            <div>
+                                {error.response && error.response.data && error.response.data.comment && (
+                                    <div>{error.response.data.comment}</div>
+                                )}
+                            </div>
+                        ):(
+                            <div>
+                                Loading....
+                            </div>
+                        )
+                    }
+                </div>
+            )
+        }
     </div>
   )
 }
