@@ -24,19 +24,20 @@ function Home() {
     <div className='home-container'>
         <Navbar/>
         <h1 className='home-heading'>
-           Skill Assessment and Recomendation Engine. 
-        </h1>
+           Skill Assessment and Recommendation Engine
+        </h1> <br />
         <div className='home-text-msg'>
-            Welcome to Assess your skills and get Recomendation accordingly.
+            Welcome to Assess your skills and get Recommendation accordingly.
         </div>
+        <div className='box'>
 
-        <input className='home-input' type='text' placeholder='Enter username' onChange={(e)=>{handleChange(e)}}></input>
+        <input className='home-input' type='text' placeholder='Enter username' onChange={(e)=>{handleChange(e)}}></input><br /><br />
         <button className='home-input-btn' onClick={handleSubmit}>Submit</button>
         {
             click && (
                 <Codeforces username={username}/>
             )
-        }
+        }</div>
     </div>
   )
 }
