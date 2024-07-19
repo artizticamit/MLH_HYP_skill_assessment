@@ -2,6 +2,7 @@ import React,{useState, useEffect, useMemo} from 'react'
 import axios from 'axios'
 import './Codeforces.css'
 import ShowChart from './ShowChart';
+import Recommendation from '../Recommendation/Recommendation';
 
 function Codeforces({username}) {
 
@@ -62,7 +63,7 @@ function Codeforces({username}) {
         })
         return tagCounts;
     }, [updatedUserStatus])
-    console.log(updatedUserStatus)
+    // console.log(updatedUserStatus)
 
 
 
@@ -82,9 +83,12 @@ function Codeforces({username}) {
         }
         {
             (userData.status === 'OK' && updatedUserStatus.length!==0) ? (
-                <div className='codeforces-tags'>
-                        <h3>Tag Counts:</h3>
-                        <ShowChart tagCounts={tagCounts} />
+                <div>
+                    <div className='codeforces-tags'>
+                            <h3>Tag Counts:</h3>
+                            <ShowChart tagCounts={tagCounts} />
+                    </div>
+                    <Recommendation userProblems={userStatus} />
                 </div>
             ):(
                 <div>
@@ -104,6 +108,9 @@ function Codeforces({username}) {
                 </div>
             )
         }
+
+
+        
     </div>
   )
 }

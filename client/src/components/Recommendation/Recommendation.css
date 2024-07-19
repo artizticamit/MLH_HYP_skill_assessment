@@ -1,0 +1,35 @@
+/* Recommendation.css */
+
+.rec-container {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.rec-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.recommendations {
+    margin-top: 20px;
+}
+
+.recommendations ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.recommendations li {
+    margin: 5px 0;
+}
+
+.error {
+    color: red;
+    margin-top: 20px;
+}
